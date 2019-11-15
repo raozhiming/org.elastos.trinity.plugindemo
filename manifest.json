@@ -40,7 +40,8 @@
       "Notification",
       "QRScanner",
       "StatusBar",
-      "Vibration"
+      "Vibration",
+      "Wallet"
   ],
   "urls": [
     "http://www.baidu.com/*",
