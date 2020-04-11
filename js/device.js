@@ -19,10 +19,16 @@
 
 var deviceInfo = document.getElementById("deviceinfo");
 
-//拍照
 function getDeviceInfo() {
-    deviceInfo.innerHTML="Model:" + device.model +"<br>Platform:" + device.platform + "<br>UUID:" + device.uuid
-        + "<br>Version:" + device.version + "<br>manufacturer:" + device.manufacturer + "<br>serial:" + device.serial + "<br>isVirtual:" + device.isVirtual;
+    device.getInfo((info)=>{
+        deviceInfo.innerHTML="Model:" + info.model +"<br>Platform:" + info.platform + "<br>UUID:" + info.uuid
+            + "<br>Version:" + info.version + "<br>manufacturer:" + info.manufacturer + "<br>serial:" + info.serial + "<br>isVirtual:" + info.isVirtual;
+        }, ((err) => {
+            console.log('getInfo error:', err);
+        })
+    )
+//    deviceInfo.innerHTML="Model:" + device.model +"<br>Platform:" + device.platform + "<br>UUID:" + device.uuid
+//        + "<br>Version:" + device.version + "<br>manufacturer:" + device.manufacturer + "<br>serial:" + device.serial + "<br>isVirtual:" + device.isVirtual;
 }
 
 var app = {
