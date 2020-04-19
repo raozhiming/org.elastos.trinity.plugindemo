@@ -19,7 +19,9 @@
 
 var netInfo = document.getElementById("netinfo");
 
-
+function networkInfoInit() {
+    navigator.connection.Initialize();
+}
 
 function networkInfo() {
    var networkState = navigator.connection.type;
@@ -60,6 +62,7 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+        networkInfoInit();
         networkInfo();
     },
 };
